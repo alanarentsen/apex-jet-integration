@@ -1,0 +1,27 @@
+<div tabindex="0" role="group" class="demo-card-flip-container"
+  data-bind="event: {click: flipCard, keypress: flipCard}, attr: {'aria-label': $props.name + ' Press Enter for more info.'}">
+  <div class="demo-card-front-side">
+    <!-- ko if: $props.avatar == null -->
+      <div class="demo-card-avatar" data-bind="text: initials"></div>
+    <!-- /ko -->
+    <!-- ko if: $props.avatar != null -->
+      <img class="demo-card-avatar" data-bind="attr: {src: $props.avatar, alt: $props.name}">
+    <!-- /ko -->
+    <h2 data-bind="text: $props.name"></h2>
+  </div>
+
+  <div class="demo-card-back-side">
+    <div class="demo-card-inner-back-side">
+      <h2 data-bind="text: $props.name"></h2>
+      <h5 class="demo-card-title" data-bind="text: $props.workTitle"></h5>
+      <!-- ko if: $props.work != null -->
+        <h5>Work</h5>
+        <div class="demo-card-work" data-bind="text: $props.work"></div>
+      <!-- /ko -->
+      <!-- ko if: $props.email != null -->
+        <h5>Email</h5>
+        <span class="demo-card-email"data-bind="text: $props.email"></span>
+      <!-- /ko -->
+    </div>
+  </div>
+</div>

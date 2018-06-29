@@ -1,0 +1,35 @@
+
+V2.0.2
+Application 106 - Close GAP with JET v2.0.2
+
+	1	Initializer (items)
+
+	2	Knockout (regions)
+
+	3	Data Attribute (items)
+
+	4	Data Attribute (regions)
+
+
+V4.2.0
+Application 108 - Close GAP with JET v&JET_VERSION.
+
+	1	Initializer (items)
+
+	2	Knockout (regions)
+
+	3	Data Attribute (items)
+
+	4	Data Attribute (regions)
+
+
+jet-enabled
+Application 103 - Close GAP with JET v&JET_VERSION. enabled
+
+	2	ojModule - Employees
+
+	3	ojModule - REST
+
+	4	Data Attribute CCA (regions)
+
+	6	ojModule - Combinations

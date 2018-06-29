@@ -1,0 +1,291 @@
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+
+    <div id="form-container">
+        <div class="oj-flex">
+            <div class="oj-sm-margin-4x-end">
+              <h5>Placeholder</h5>
+              <oj-switch id="switch" value="{{placeholder}}" class="oj-switch oj-component oj-form-control oj-complete">
+                <input data-oj-internal="" type="checkbox" tabindex="-1" class="oj-component-initnode" style="display: none;">
+                <div class="oj-switch-container">
+                  <div class="oj-switch-track">
+                    <div class="oj-switch-thumb" tabindex="0" role="switch checkbox" aria-checked="false" placeholder=""></div>
+                  </div>
+                </div>
+              </oj-switch>
+            </div>
+            <div class="oj-sm-margin-4x-end">
+              <h5>Add Messages</h5>
+              <style>
+                .oj-disabled .oj-fwk-icon {
+                  opacity: .3;
+                }
+              </style>
+              <oj-buttonset-many class="oj-buttonset-width-auto" value="{{formControls}}" disabled="[[formState() != 'enabled']]">
+                <oj-option value="error" id="errorControls">
+                  <span slot="startIcon" data-bind="css: 'oj-fwk-icon-status-error oj-fwk-icon'"></span>
+                </oj-option>
+                <oj-option value="warning" id="warningControls">
+                  <span slot="startIcon" data-bind="css: 'oj-fwk-icon-status-warning oj-fwk-icon'"></span>
+                </oj-option>
+                <oj-option value="info" id="infoControls">
+                  <span slot="startIcon" data-bind="css: 'oj-fwk-icon-status-info oj-fwk-icon'"></span>
+                </oj-option>
+                <oj-option value="confirmation" id="confirmationControls">
+                  <span slot="startIcon" data-bind="css: 'oj-fwk-icon-status-confirmation oj-fwk-icon'"></span>
+                </oj-option>
+              </oj-buttonset-many>
+            </div>
+            <div>
+              <h5>Set State</h5>
+              <div id='buttons-container'>
+                <oj-buttonset-one id="severityCheckboxButtonSet" value="{{formState}}">
+                  <oj-option id="enabled" value="enabled">Enabled</oj-option>
+                  <oj-option id="disabled" value="disabled">Disabled</oj-option>
+                  <oj-option id="readonly" value="readonly">Read only</oj-option>
+      
+                </oj-buttonset-one>
+              </div>
+              <p class="oj-text-sm oj-sm-margin-4x-bottom">* readonly not supported on radio, checkbox, combobox, select, slider, input search, color palette, or color spectrum</p>
+            </div>
+          </div>
+      <div class="oj-form-layout">
+        <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="inputcontrol1">input</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text id="inputcontrol1" placeholder="placeholder text" value='{{placeholder()? null : "text"}}' disabled="[[disableFormControls()]]"
+                readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"></oj-input-text>
+            </div>
+          </div>
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <label for="text-input" class="oj-label-nocomp">input no component</label>
+            </div>
+            <div class="oj-flex-item">
+              <input id="text-input" type="text" placeholder="placeholder text" class="oj-form-control oj-inputtext-nocomp" data-bind="
+                           value: placeholder()? null : 'text', 
+                           attr: {
+                               disabled: disableFormControls,
+                               readOnly: readonlyFormControls}" />
+            </div>
+          </div>
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="inputcontrol2">password</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-password id="inputcontrol2" placeholder="placeholder text" value='{{placeholder()? null : "text"}}' disabled="[[disableFormControls()]]"
+                readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"></oj-input-password>
+            </div>
+          </div>
+
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="textareacontrol">textarea</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-text-area id="textareacontrol" rows='4' placeholder="placeholder text" value='{{placeholder()? null : "text"}}' disabled="[[disableFormControls()]]"
+                readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"></oj-text-area>
+            </div>
+          </div>
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <label for="textareanocomp" class="oj-label-nocomp">textarea no component</label>
+            </div>
+            <div class="oj-flex-item">
+              <textarea class="oj-form-control oj-textarea-nocomp" placeholder="placeholder text" id="textareanocomp" rows="4" data-bind="
+                               text: placeholder()? null : 'text', 
+                               disable: disableFormControls,
+                                       attr: { readonly: readonlyFormControls}"></textarea>
+            </div>
+          </div>
+
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="spinnercontrol">input number</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-number id="spinnercontrol" max="100" min="0" step="10" placeholder="placeholder text" value='{{placeholder()? null : 20}}'
+                disabled="[[disableFormControls()]]" readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"></oj-input-number>
+            </div>
+          </div>
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="datepickercontrol">input date</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-date id="datepickercontrol" placeholder="placeholder text" value='{{placeholder()? null : isoDate}}' disabled="[[disableFormControls()]]"
+                readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"> </oj-input-date>
+            </div>
+          </div>
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="timepickercontrol">input time</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-time id="timepickercontrol" placeholder="placeholder text" value='{{placeholder()? null : isoDate}}' disabled="[[disableFormControls()]]"
+                readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"> </oj-input-time>
+            </div>
+          </div>
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label for="datetimepickercontrol">input datetime</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-date-time id="datetimepickercontrol" placeholder="placeholder text" value='{{placeholder()? null : isoDate}}' disabled="[[disableFormControls()]]"
+                readonly="[[readonlyFormControls]]" messages-custom="{{messages}}"> </oj-input-date-time>
+            </div>
+          </div>
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label for="combobox">combobox</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-combobox-one id="combobox" placeholder="placeholder text" value='{{placeholder()? null : "Chrome"}}' disabled="[[disableFormControls()]]"
+                messages-custom="{{messages}}">
+                <oj-option value="Internet Explorer">Internet Explorer</oj-option>
+                <oj-option value="Firefox">Firefox</oj-option>
+                <oj-option value="Chrome">Chrome</oj-option>
+                <oj-option value="Opera">Opera</oj-option>
+                <oj-option value="Safari">Safari</oj-option>
+              </oj-combobox-one>
+            </div>
+          </div>
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label for="combobox2">combobox multiple</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-combobox-many id="combobox2" placeholder="placeholder text" value='{{placeholder()? null : ["Chrome"]}}' disabled="[[disableFormControls()]]"
+                messages-custom="{{messages}}">
+                <oj-option value="Internet Explorer">Internet Explorer</oj-option>
+                <oj-option value="Firefox">Firefox</oj-option>
+                <oj-option value="Chrome">Chrome</oj-option>
+                <oj-option value="Opera">Opera</oj-option>
+                <oj-option value="Safari">Safari</oj-option>
+              </oj-combobox-many>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label for="select">select</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-select-one id="select" placeholder="placeholder text" value='{{placeholder()? "" : "Chrome"}}' disabled="[[disableFormControls()]]"
+                messages-custom="{{messages}}">
+                <oj-option value="Internet Explorer">Internet Explorer</oj-option>
+                <oj-option value="Firefox">Firefox</oj-option>
+                <oj-option value="Chrome">Chrome</oj-option>
+                <oj-option value="Opera">Opera</oj-option>
+                <oj-option value="Safari">Safari</oj-option>
+              </oj-select-one>
+            </div>
+          </div>
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label for="select2">select multiple</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-select-many id="select2" placeholder="placeholder text" value='{{placeholder()? [] : (["Chrome"])}}' disabled="[[disableFormControls()]]"
+                messages-custom="{{messages}}">
+                <oj-option value="Internet Explorer">Internet Explorer</oj-option>
+                <oj-option value="Firefox">Firefox</oj-option>
+                <oj-option value="Chrome">Chrome</oj-option>
+                <oj-option value="Opera">Opera</oj-option>
+                <oj-option value="Safari">Safari</oj-option>
+              </oj-select-many>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label for="slider">slider</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-slider id="slider" value="20" max=100 min=0 step=10 disabled="[[disableFormControls()]]" messages-custom="{{messages}}">
+              </oj-slider>
+            </div>
+          </div>
+
+          <div class="oj-flex">
+            <div class="oj-flex-item">
+              <oj-label id="switchLabel" for="switch2">switch</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-switch id="switch2" disabled="[[disableFormControls()]]" messages-custom="{{messages}}" readonly="[[readonlyFormControls]]"></oj-switch>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label id="radiosetlabel">radioset</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-radioset id="radioSetId" labelled-by="radiosetlabel" messages-custom="{{messages}}" disabled="[[disableFormControls]]">
+                <oj-option id="blueopt" value="blue" name="rbb">Blue</oj-option>
+                <oj-option id="greenopt" value="green" name="rbb">Green</oj-option>
+                <oj-option id="redopt" value="red" name="rbb">Red</oj-option>
+              </oj-radioset>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label id="checkboxsetlabel">checkboxset</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-checkboxset id="checkboxSetId" messages-custom="{{messages}}" disabled="[[disableFormControls]]" labelled-by="checkboxsetlabel">
+                <oj-option id="blueopt2" name="cbb" value="blue">Blue</oj-option>
+                <oj-option id="greenopt2" name="cbb" value="green">Green</oj-option>
+                <oj-option id="redopt2" name="cbb" value="red">Red</oj-option>
+              </oj-checkboxset>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label id="checkboxsetsinglelabel">checkboxset single item</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-checkboxset id="checkboxSetSingleId" class="oj-checkboxset-single oj-checkboxset-no-chrome oj-checkboxset-input-start"
+                messages-custom="{{messages}}" disabled="[[disableFormControls]]" labelled-by="checkboxsetsinglelabel">
+                <oj-option id="agreeopt1" name="agree" value="agree">Agree</oj-option>
+              </oj-checkboxset>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label id="spectrumLabel">color spectrum</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-color-spectrum labelled-by="spectrumLabel" id="colorSpectrum" value="{{colorSpectrumValue}}" messages-custom="{{messages}}"
+                disabled="[[disableFormControls]]">
+              </oj-color-spectrum>
+            </div>
+          </div>
+
+          <div class="oj-flex" data-bind="visible:!readonlyFormControls()">
+            <div class="oj-flex-item">
+              <oj-label id="paletteLabel">color palette</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-color-palette id="colorPalette" class="demo-palette-picker" labelled-by="paletteLabel" palette="[[colorPickerPalette]]"
+                swatch-size="sm" label-display="auto" layout="list" value="{{colorPaletteValue}}" messages-custom="{{messages}}"
+                disabled="[[disableFormControls]]">
+              </oj-color-palette>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

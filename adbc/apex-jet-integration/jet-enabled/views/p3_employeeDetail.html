@@ -1,0 +1,53 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<h1>employeeDetail</h1>
+        <div id="tableDetail" class="oj-flex oj-flex-items-pad">
+            <div class="oj-xl-8 oj-lg-8 oj-md-6 oj-flex-item">
+                <oj-table id="tableDetail" aria-label="Employee Table"
+                                            data='[[datasource]]'
+                                            columns-default='{"sortable": "disabled"}' 
+                                            columns='[
+                 {"headerText": "Name", "field": "ename"},
+                 {"headerText": "Job", "field": "job"},
+                 {"headerText": "Salary", "field": "sal"}]'
+                                            on-current-row-changed='[[currentRowListener]]'>
+                </oj-table>
+            </div>
+            
+            <div class="oj-xl-4 oj-lg-4 oj-md-6 oj-flex-item">
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="employeeNameInput">Employee</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-input-text id="employeeNameInput" value="{{inputEmployeeName}}"></oj-input-text>
+                    </div>
+                </div>     
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="jobInput">Job</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                      <oj-input-text id="jobInput" value="{{inputJob}}"></oj-input-text>
+                    </div>
+                </div>             
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="salaryInput">Salary</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                      <oj-input-number id="salaryInput" value="{{inputSalary}}"></oj-input-number>
+                    </div>
+                </div>    
+                <div class="oj-flex oj-flex-items-pad">
+                  <!--<oj-button id='addbutton' on-click='[[addRow]]'>Add to end</oj-button>-->
+                  <oj-button id='updateButton' on-click='[[updateRow]]'>Update</oj-button>   
+                  <!--<oj-button id='removeButton' on-click='[[removeRow]]'>Remove</oj-button>-->
+                </div>
+            </div>
+            
+        </div>

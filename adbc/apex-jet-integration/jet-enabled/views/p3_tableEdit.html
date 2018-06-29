@@ -1,0 +1,66 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<h1>tableEdit</h1>
+        <div id="tableDemo" class="oj-flex oj-flex-items-pad">
+            <div class="oj-xl-8 oj-lg-8 oj-md-6 oj-flex-item">
+                <oj-table id="tableEdit" aria-label="Departments Table"
+                                            data='[[dataprovider]]'
+                                            columns-default='{"sortable": "disabled"}' 
+                                            columns='[{"headerText": "Department Id", 
+                                                       "field": "DepartmentId"},
+                                                      {"headerText": "Department Name", 
+                                                       "field": "DepartmentName"},
+                                                      {"headerText": "Location Id", 
+                                                       "field": "LocationId"},
+                                                      {"headerText": "Manager Id", 
+                                                       "field": "ManagerId"}]'
+                                            on-current-row-changed='[[currentRowListener]]'>
+                </oj-table>
+            </div>
+            <div class="oj-xl-4 oj-lg-4 oj-md-6 oj-flex-item">
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="departmentIdInput">Department Id</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-input-number id="departmentIdInput" max="2000" min="0" step="1" 
+                                         value="{{inputDepartmentId}}"></oj-input-number>
+                    </div>
+                </div>     
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="departmentNameInput">Department Name</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                      <oj-input-text id="departmentNameInput" value="{{inputDepartmentName}}"></oj-input-text>
+                    </div>
+                </div>             
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="locationIdInput">Location Id</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                      <oj-input-number id="locationIdInput" max="300" min="0" step="1" 
+                                         value="{{inputLocationId}}"></oj-input-number>
+                    </div>
+                </div>     
+                <div class="oj-flex oj-flex-items-pad">
+                    <div class="oj-flex-item deprecated-col-default-width">
+                        <oj-label for="managerIdInput">Manager Id</oj-label>
+                    </div>
+                    <div class="oj-flex-item deprecated-col-default-width">
+                      <oj-input-number id="managerIdInput" max="300" min="0" step="1" 
+                                         value="{{inputManagerId}}"></oj-input-number>  
+                    </div>
+                </div> 
+                <div class="oj-flex oj-flex-items-pad">
+                  <oj-button id='addbutton' on-click='[[addRow]]'>Add to end</oj-button>
+                  <oj-button id='updateButton' on-click='[[updateRow]]'>Update</oj-button>   
+                  <oj-button id='removeButton' on-click='[[removeRow]]'>Remove</oj-button>
+                </div>
+            </div>
+        </div>

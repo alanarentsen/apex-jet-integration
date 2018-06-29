@@ -1,0 +1,11 @@
+<div id="sampleDemo" style="" class="demo-padding demo-container">
+  <div id="componentDemoContent" style="width: 1px; min-width: 100%;">
+    <div id="composite-container" class="oj-flex oj-sm-flex-items-initial">
+      <!-- ko foreach: employees -->
+      <demo-card class="oj-flex-item" name="[[name]]" avatar="[[avatar]]" work-title="[[title]]" work="[[work]]" email="[[email]]">
+      </demo-card>
+      <!-- /ko -->
+      <span data-bind="visible: employees.length == 0">No data to display...</span>
+    </div>
+  </div>
+</div>

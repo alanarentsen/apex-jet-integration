@@ -1,0 +1,14 @@
+<oj-timeline id='tline' data-bind='attr: {"aria-label": "Single Series Timeline Demo. Current date is " + currentDateString}'
+minor-axis='{
+  "scale": "weeks",
+  "zoomOrder": ["months", "weeks", "days"]
+}'
+major-axis.scale='quarters'
+start='[[new Date("Jan 1, 2010").toISOString()]]'
+end='[[new Date("Dec 31, 2010").toISOString()]]'
+selection-mode='single'
+reference-objects='[[referenceObjects]]'
+selection='["e4"]'
+series='[[timelineSeries]]'
+style='width:100%;height:350px'>
+</oj-timeline>
