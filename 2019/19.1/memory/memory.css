@@ -1,0 +1,6 @@
+demo-memory-game demo-memory-card .demo-memory-card-front-side {
+    background-image: url(/adbc/logo_small.png)!important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
