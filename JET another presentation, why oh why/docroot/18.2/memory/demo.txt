@@ -1,0 +1,11 @@
+https://www.oracle.com/webfolder/technetwork/jet-420/jetCookbook.html?component=composite&demo=nested
+
+1. http://localhost:32182/ords/f?p=116:3
+2. show page static region
+3. show CSS file url's
+4. show JavaScript file url's
+5. show /Users/alan/docker/web/18.2/memory/demo-memory-card.js
+    => requirejs.config
+    => require code from cookbook
+    => changed paths
+6. show page
